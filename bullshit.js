@@ -648,7 +648,7 @@ window.findAndReplaceDOMText = (function() {
 		styleSheet = document.createStyleSheet();
 	}
 	else{
-		var head = document.getEleementsByTagName("head")[0];
+		var head = document.getElementsByTagName("head")[0];
 		styleElt = document.createElement("style");
 		head.appendChild(styleElt);
 		styleSheet = document.styleSheets[document.styleSheets.length-1];
