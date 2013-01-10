@@ -655,7 +655,7 @@ window.findAndReplaceDOMText = (function() {
 	}
 	if (styleElt) styleElt.innerHTML = styles;
 	else styleSheet.cssText = styles;
-}('.BullShit:before{:content:"Bullshit"}'))
+}('.BullShit:before{content:"Bullshit"}'))
 	function bulshitize(term) {
 		var c = term.charAt(0),
 		    bullshit = (c === c.toUpperCase() ? 'B' : 'b') + 'ullshit';
@@ -670,6 +670,9 @@ window.findAndReplaceDOMText = (function() {
 		return abbr;
 	}
 var cl=document.createElement("span");
+var hid=document.createElement("span");
+hid.setAttribute("display","none");
+cl.appendChild(hid);
 cl.className="BullShit";
 	var re = new RegExp('(' + bullshits.join('|') + ')(?!\\w|[^<]*>)', 'gi'),
 	    body = document.body;
