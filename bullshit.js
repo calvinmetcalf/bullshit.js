@@ -642,7 +642,20 @@ window.findAndReplaceDOMText = (function() {
 		'world.class',
 		'wow factor'
 	];
-
+(function(styles){
+	var styleElt, styleSheet;
+	if (document.createStyleSheet) {
+		styleSheet = document.createStyleSheet();
+	}
+	else{
+		var head = document.getEleementsByTagName("head")[0];
+		styleElt = document.createElement("style");
+		head.appendChild(styleElt);
+		styleSheet = document.styleSheets[document.styleSheets.length-1];
+	}
+	if (styleElt) styleElt.innerHTML = styles;
+	else styleSheet.cssText = styles;
+}('.BullShit:before{:content:"Bullshit"}'))
 	function bulshitize(term) {
 		var c = term.charAt(0),
 		    bullshit = (c === c.toUpperCase() ? 'B' : 'b') + 'ullshit';
@@ -656,8 +669,9 @@ window.findAndReplaceDOMText = (function() {
 		abbr.innerHTML = bullshit;
 		return abbr;
 	}
-
+var cl=document.createElement("span");
+cl.className-"BullShit";
 	var re = new RegExp('(' + bullshits.join('|') + ')(?!\\w|[^<]*>)', 'gi'),
 	    body = document.body;
-		findAndReplaceDOMText(re,body, bulshitize)
+		findAndReplaceDOMText(re,body, cl)
 }());
