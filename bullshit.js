@@ -670,7 +670,7 @@ window.findAndReplaceDOMText = (function() {
 		return abbr;
 	}
 var cl=document.createElement("span");
-cl.className-"BullShit";
+cl.className="BullShit";
 	var re = new RegExp('(' + bullshits.join('|') + ')(?!\\w|[^<]*>)', 'gi'),
 	    body = document.body;
 		findAndReplaceDOMText(re,body, cl)
