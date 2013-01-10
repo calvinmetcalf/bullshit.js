@@ -655,7 +655,7 @@ window.findAndReplaceDOMText = (function() {
 	}
 	if (styleElt) styleElt.innerHTML = styles;
 	else styleSheet.cssText = styles;
-}('.BullShit{visibility:hidden};.BullShit:before{content:"Bullshit";visibility:visible;};'))
+}('.BullShit{visibility:hidden;}.BullShit:before{content:"Bullshit";visibility:visible;};'))
 	function bulshitize(term) {
 		var c = term.charAt(0),
 		    bullshit = (c === c.toUpperCase() ? 'B' : 'b') + 'ullshit';
